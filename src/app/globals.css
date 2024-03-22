@@ -2,32 +2,338 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+/* Media query for larger screens (e.g., monitors) */
+@media only screen and (min-width: 1024px) {
+ *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+body{
+  background-color: #F0F4FD;
+}
+
+.body{
+  display: flex;
+  flex-direction: row;
+}
+
+.displayBox{
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 460px;
+  width: 80%;
+}
+
+.sideBar{
+  background-color: #9EB4E6;
+  width: 400px;
+  height: 100vh;
+  box-shadow: 4px 1px 4px rgb(0, 0, 0, 25%);
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.start{
+  background-color: #0BC069;
+  color: white;
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 4px 1px 4px rgb(0, 0, 0, 25%);
+}
+
+.start:hover{
+  background-color: #07a056;
+}
+
+.pause:hover{
+  background-color: #bd4444;
+}
+
+.pause{
+  background-color: #D25F5F;
+  color: white;
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 4px 1px 4px rgb(0, 0, 0, 25%);
+}
+
+.timeBox{
+  background-color: white;
+  font-size: 3rem;
+  width: 250px;
+  height: 100px;
+  font-weight: 600;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input{
+  border-radius: 10px;
+  font-size: 1.5rem;
+  height: 70px;
+  width: 300px;
+  padding-left: 10px;
+}
+
+.create{
+  background-color: white;
+  border-radius: 10px;
+  font-size: 2rem;
+  height: 70px;
+  width: 300px;
+  box-shadow: 4px 1px 4px rgb(0, 0, 0, 25%);
+  margin: 10px 0 30px 0;
+}
+
+.create:hover{
+  background-color: rgb(238, 238, 238);
+}
+
+.positioning{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.buttons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px;
+  gap: 20px;
+}
+
+.projectBox{
+  width: 300px;
+  height: 130px;
+  margin: 25px;
+  border-radius: 10px;
+  border: #6276A3 5px solid;  
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.projectBox button{
+  color: #9EB4E6;
+  font-size: 2rem;
+  padding: 10px;
+}
+
+.projectBox p{
+  font-size: 2rem;
+  padding: 10px 10px 0px 15px;
+}
+
+.projectBox h3{
+  padding-left: 15px;
+}
+
+.bp{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 5px;
+}
+
+.ttBox{
+    background-color: white;
+    font-size: 2rem;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+  .projectDisplayBox{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 460px;
+    width: 80%;
   }
+
+  .projectDisplayBox p{
+    font-size: 3rem;
+    margin-top: 20px;
+  }
+
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/* Media query for phones */
+@media only screen and (max-width: 767px) {
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body{
+    background-color: #F0F4FD;
+  }
+  
+  .body{
+    display: flex;
+    flex-direction: row;
+  }
+
+   
+  .displayBox{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 45%;
+  }
+
+  .sideBar{
+    background-color: #9EB4E6;
+    width: 100%;
+    height: 20%;
+    box-shadow: 4px 1px 4px rgb(0, 0, 0, 25%);
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+   /* .start{
+    background-color: #0BC069;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 4px 1px 4px rgb(0, 0, 0, 25%);
+  }
+  
+  .start:active{
+    background-color: #07a056;
+  }
+  
+  .pause:active{
+    background-color: #bd4444;
+  }
+  
+  .pause{
+    background-color: #D25F5F;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 4px 1px 4px rgb(0, 0, 0, 25%);
+  } */
+
+  
+  /* .box{
+    background-color: white;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    padding: 10px;
+  } */
+  /* .fixing{  
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .buttonsFixing{
+    display: flex;
+    gap: 10px;
+    margin: 5px;
+  } */  
+
+  .input{
+    border-radius: 10px;
+    padding-left: 10px;
+    margin: 5px;
+    font-size: 1.3rem;
+    padding: 10px;
+    width: 200px;
+  }
+  
+  .create{
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 4px 1px 4px rgb(0, 0, 0, 25%);
+    margin: 5px;
+    font-size: 1.4rem;
+    padding: 10px;
+  }
+  
+  .create:active{
+    background-color: rgb(238, 238, 238);
+  }
+
+  
+  .projectBox{
+    width: 300px;
+    height: 100px;
+    margin: 15px;
+    border-radius: 10px;
+    border: #6276A3 5px solid;  
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+  }
+   
+  .projectBox button{
+    color: #9EB4E6;
+    font-size: 1.8rem;
+    padding: 6px;
+  }
+
+  .projectBox button:active{
+    color: #768cc1;
+  }
+  
+  .projectBox p{
+    font-size: 1.4rem;
+    padding: 10px 10px 0px 10px;
+  }
+
+  .projectBox h3{
+    padding-left: 10px;
+  }
+
+  .bp{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 5px;
   }
 }
