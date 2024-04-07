@@ -1,7 +1,8 @@
 import { getData, getDataById } from "@/app/utils/handledb";
-import { FaPause } from "react-icons/fa";
-import { FaPlay } from "react-icons/fa";
+import { FaArrowLeft } from "react-icons/fa";
 import Timer from "@/components/Timer";
+import Link from "next/link";
+import TotalTime from "@/components/TotalTime";
 
 type PageByIdProps = {
   params: {
@@ -14,30 +15,25 @@ export default async function pageById({ params }: PageByIdProps) {
   const data = await getDataById(projectId);
   return (
     <div className="body">
-      <div className="sideBar">
+      <div className="sideBar2">
         <div className="positioning">
           <div>
-            <Timer></Timer>
+            <Timer projectId={params.id} />
           </div>
-        </div>
 
-        <div className="ttBox">
-          <p>
-            <b>Total Time:</b>
-
-            <p>
-              <b>2 hours 45 minutes</b>
-            </p>
-          </p>
+          <Link href={"../"}>
+            <button className="back">
+              <FaArrowLeft />
+            </button>
+          </Link>
         </div>
       </div>
-
       <div className="projectDisplayBox">
         <div>
-          <p>
-            <b>{data.projectname}</b>
-          </p>
+          <h2>{data.projectname}</h2>
         </div>
+        {/* in seconds */}
+        <TotalTime projectId={params.id} />
       </div>
     </div>
   );

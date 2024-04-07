@@ -25,6 +25,7 @@ export default async function Home() {
   return (
     <div className="body">
       <div className="sideBar">
+        <h1>Project Timers</h1>
         <form className="positioning" action={create}>
           <input
             className="input"

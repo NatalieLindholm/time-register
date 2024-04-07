@@ -1,3 +1,4 @@
+'use server'
 import { db } from './db';
 
 export async function getData() {
@@ -38,5 +39,15 @@ export async function deleteData(id: string) {
   } catch (error) {
     console.log(error);
     return 'Didnt delete'
+  }
+}
+
+export async function saveTime(projectId:number, timespent:number) {
+  try {
+    await db.query("UPDATE projects SET timespent = timespent+$1 WHERE id = ($2)", [timespent, projectId]);
+    return 'Time Saved Successfully';
+  } catch (error) {
+    console.log(error);
+    return 'Time Didnt save'
   }
 }
