@@ -46,7 +46,6 @@ export default async function Home() {
               <p>
                 <b>{project.projectname}</b>
               </p>
-              <h3>Total time: 1h 23 minutes</h3>
             </div>
 
             <div className="bp">
